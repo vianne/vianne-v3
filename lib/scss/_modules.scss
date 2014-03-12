@@ -143,6 +143,16 @@
   }
 }
 
+// # Lists
+.list-hometopics{
+  margin-bottom: 50px;
+  dt,
+  dd{
+    display: inline-block;
+    font-size: $fz12;
+  }
+}
+
 // # header
 .h{
   @at-root{
