@@ -4,6 +4,10 @@
 }
 
 // # Image
+#js-homebg{
+  position: fixed;
+  z-index: -1;
+}
 .mainimg{
   margin-bottom: 30px;
 }

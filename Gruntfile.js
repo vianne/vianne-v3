@@ -34,10 +34,10 @@ module.exports = function(grunt) {
           'www/assets/js/common.min.js': [
             jsPath + 'jquery-1.10.2.min.js',
             jsPath + 'ga.js',
-            jsPath + 'DD_belatedPNG_0.0.8a-min.js', // IE6で24bitPNGを有効に
+            //jsPath + 'DD_belatedPNG_0.0.8a-min.js', // IE6で24bitPNGを有効に
             jsPath + 'jquery.scrollTo-min.js', // スムーズスクロール用
             jsPath + 'localscroll.js',  // スムーズスクロール用（scrollToとセット）
-            jsPath + 'if.useragent.js', // UA判別
+            //jsPath + 'if.useragent.js', // UA判別
             //jsPath + 'jquery.cookie.js', // cookie用
             jsPath + 'common.js'
           ]
