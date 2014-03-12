@@ -3,6 +3,7 @@
   position: relative;
   margin-bottom: 50px;
   height: 50px;
+  font-size: $fz20;
   &::after{
     content: "";
     position: absolute;
@@ -119,6 +120,29 @@
   }
 }
 
+// # Table
+.table-outline{
+  margin-top: 50px;
+  caption{
+    font-size: $fz12;
+    caption-side: bottom;
+    text-align: left;
+  }
+  th,
+  td{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th{
+    width: 60px;
+  }
+  td{
+    padding-left: 20px;
+  }
+}
+
 // # header
 .h{
   @at-root{
@@ -207,5 +231,18 @@
     }
     #{&}-ttl{}
     #{&}-year{}
+  }
+}
+
+.blk-works{
+  @at-root{
+    #{&}-l{
+      float: left;
+      width: 380px;
+    }
+    #{&}-r{
+      float: right;
+      width: 460px;
+    }
   }
 }

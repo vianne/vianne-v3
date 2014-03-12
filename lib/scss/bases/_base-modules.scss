@@ -87,24 +87,24 @@ ol.ht{
 // # table
 .table{
   @at-root{
-    #{&}-outline{
-      border-top: 1px $tableBorderStyle $tableBorderColor;
-      border-right: 1px $tableBorderStyle $tableBorderColor;
-      thead{
-        th,
-        td{
-          text-align: center;
-        }
-      }
-      th,
-      td{
-        border-bottom: 1px $tableBorderStyle $tableBorderColor;
-        border-left: 1px $tableBorderStyle $tableBorderColor;
-      }
-      th{
-        background-color: $tableThColor;
-      }
-    }
+    // #{&}-outline{
+    //   border-top: 1px $tableBorderStyle $tableBorderColor;
+    //   border-right: 1px $tableBorderStyle $tableBorderColor;
+    //   thead{
+    //     th,
+    //     td{
+    //       text-align: center;
+    //     }
+    //   }
+    //   th,
+    //   td{
+    //     border-bottom: 1px $tableBorderStyle $tableBorderColor;
+    //     border-left: 1px $tableBorderStyle $tableBorderColor;
+    //   }
+    //   th{
+    //     background-color: $tableThColor;
+    //   }
+    // }
   }
 }
 
