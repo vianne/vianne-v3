@@ -4,20 +4,13 @@
 
   <h1 class="ttl-lv01">Blog</h1>
 
-<?php
-$args = array(
-     'post_type' => 'blog', /* 投稿タイプを指定 */
-     'paged' => $paged,
-); ?>
-<?php query_posts( $args ); ?>
-
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();
   /* ループ開始 */ ?>
 <div class="entry l-section">
   <header class="entry-header">
-    <span class="entry-date"><?php the_time("Y.m.j") ?></span><span class="entry-cat"><a href="">制作日記</a></span>
-    <h2 class="entry-ttl"><a href=""><?php the_title(); ?></a></h2>
+    <span class="entry-date"><?php the_time("Y.m.j") ?></span><span class="entry-cat"><?php echo get_the_term_list( $post->ID, 'blogcategory' ); ?></span>
+    <h2 class="entry-ttl"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
   </header>
   <section class="entry-body">
     <?php the_content(); ?>

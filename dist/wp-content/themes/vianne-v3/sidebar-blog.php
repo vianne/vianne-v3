@@ -20,7 +20,7 @@ $args = array(
   <div class="blk-blogaside">
     <h2 class="ttl-lv02">Category</h2>
     <ul class="blk-blogaside-list">
-      <?php wp_list_categories('title_li=&taxonomy=blog'); ?>
+      <?php wp_list_categories('title_li=&taxonomy=blogcategory'); ?>
     </ul>
   </div>
   <div class="blk-blogaside">

@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 <!-- index.php -->
 
-  <h1 class="ttl-lv01"><?php the_title() ?></h1>
+<div class="l-content">
+  <h1 class="ttl-lv01">Blog</h1>
 
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();
@@ -16,4 +17,7 @@
 <?php else : ?>
 <?php endif; ?>
 
+</div><!-- /l-content -->
+
+<?php get_sidebar('blog'); ?>
 <?php get_footer(); ?>
