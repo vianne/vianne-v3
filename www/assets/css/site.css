@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/*!
+ * "IPA Pゴシック" は IPA フォントライセンス v1.0 にもとづいて使用しています。
+ * http://ipafont.ipa.go.jp/
+ */
 @font-face {
   font-family: "IPA Pゴシック";
   src: url("../font/ipagp.ttf");
