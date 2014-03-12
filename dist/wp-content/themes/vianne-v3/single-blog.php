@@ -1,6 +1,4 @@
-<?php
-/* Template Name: Blog */
-get_header(); ?>
+<?php get_header(); ?>
 
 <div class="l-content">
 

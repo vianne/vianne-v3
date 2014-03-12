@@ -21,8 +21,12 @@ register_sidebar( array(
 ) );
 
 // アイキャッチ画像
+register_post_type( 'gallery', array(
+    'supports' => array('title'),
+));
+
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size(220, 165, true ); // 幅 220px、高さ 165px、切り抜きモード
+set_post_thumbnail_size(280, 170, true );
 
 // カスタムナビゲーションメニュー
 add_theme_support('menus');
