@@ -11,6 +11,10 @@ body{
   color: $baseFontColor;
 }
 
+section{
+  margin: 50px 0;
+}
+
 // # inlines
 a{
   color: $linkColor;

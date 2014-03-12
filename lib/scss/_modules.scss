@@ -1,6 +1,28 @@
 // # Titles
-.ttl-main{
-  margin-bottom: 1em;
+.ttl-lv01{
+  position: relative;
+  margin-bottom: 50px;
+  height: 50px;
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    border-bottom: 1px solid $gray;
+    width: 20px;
+  }
+}
+.ttl-lv02{
+  font-size: $fz16;
+  font-style: italic;
+  font-weight: bold;
+}
+
+// # Type
+.txt-copyright{
+  text-align: right;
+  font-size: $fz16;
 }
 
 // # Image
@@ -11,18 +33,23 @@
 .mainimg{
   margin-bottom: 30px;
 }
-.b-logo{}
+.b-logo{
+  float: left;
+  padding-top: 55px;
+}
 .b-logo-home{
   margin-bottom: 40px;
 }
 
 // # Navs
 .nav-main{
+  float: right;
+  padding-top: 60px;
   li{
     display: inline-block;
     &::before{
       content: "/";
-      margin: 0 5px;
+      margin: 0 10px 0 5px;
     }
     &:first-child{
       &::before{
@@ -30,8 +57,20 @@
       }
     }
   }
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .is-current{
+    font-weight: bold;
+    text-decoration: underline;
+  }
   #page-home &{
+    float: none;
     margin-bottom: 100px;
+    padding: 0;
   }
 }
 .nav-footer{
@@ -99,3 +138,24 @@
 }
 
 // # Boxes
+
+// # Blocks
+.blk-headerinfo{
+  position: absolute;
+  overflow: hidden;
+  top: -50px;
+  left: 0;
+  height: 50px;
+  line-height: 50px;
+  dt,
+  dd{
+    float: left;
+  }
+  dt{
+    margin-right: 2em;
+  }
+  dd{
+    margin-right: 1em;
+    font-size: $fz12;
+  }
+}

@@ -76,12 +76,26 @@ body,
   @extend .l-centering;
   position: relative;
   width: 960px;
+  .l-header &{
+    background: url("../img/bg-header.png") center bottom no-repeat;
+    height: 150px;
+  }
+  .l-main &{
+    min-height: 600px;
+    .page-about &{
+      background: url("../img/bg-about.jpg") right 0 no-repeat;
+    }
+  }
   .l-footer &{
     height: 66px;
   }
 }
 
 .l-header{
+  margin-bottom: 50px;
+  padding-top: 50px;
+  background: $keyColor url("../img/bg-headerinfo.png") 0 0 repeat-x;
+  height: 150px;
 }
 
 .l-main{
