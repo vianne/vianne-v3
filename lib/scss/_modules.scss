@@ -147,7 +147,8 @@
 .list-hometopics{
   margin-bottom: 50px;
   dt,
-  dd{
+  dd,
+  li{
     display: inline-block;
     font-size: $fz12;
   }

@@ -13,17 +13,42 @@
 <section>
   <h2 class="ttl-lv02">Recent</h2>
   <dl class="list-hometopics">
-    <dt>2014.03.12</dt>
-    <dd><a href="">サイトをリニューアルしました。</a></dd>
+    <!-- <dt>2014.03.12</dt>
+    <dd><a href="">サイトをリニューアルしました。</a></dd> -->
+    <?php
+    $args = array(
+      'posts_per_page' => 1,
+      'post_type' => 'blog'
+    ); ?>
+    <?php query_posts( $args ); ?>
+    <?php if (have_posts()) : ?>
+    <?php while (have_posts()) : the_post(); ?>
+    <dt><?php the_time("Y.m.d") ?></dt>
+    <dd><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></dd>
+    <?php endwhile; ?>
+    <?php else : ?>
+    <?php endif; ?>
   </dl>
 </section>
 
 <section>
   <h2 class="ttl-lv02">Event</h2>
-  <dl class="list-hometopics">
-    <dt>2014.05.11</dt>
-    <dd><a href="" target="_blank">博麗神社例大祭11</a></dd>
-  </dl>
+  <ul class="list-hometopics">
+    <!-- <dt>2014.05.11</dt>
+    <dd><a href="" target="_blank">博麗神社例大祭11</a></dd> -->
+    <?php
+    $args = array(
+      'posts_per_page' => 3,
+      'post_type' => 'event'
+    ); ?>
+    <?php query_posts( $args ); ?>
+    <?php if (have_posts()) : ?>
+    <?php while (have_posts()) : the_post(); ?>
+    <li><?php the_content(); ?></li>
+    <?php endwhile; ?>
+    <?php else : ?>
+    <?php endif; ?>
+  </ul>
 </section>
 
 <?php get_footer(); ?>

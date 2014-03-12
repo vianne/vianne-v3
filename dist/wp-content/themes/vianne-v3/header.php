@@ -39,8 +39,15 @@
     </ul>
     <dl class="blk-headerinfo">
       <dt>Event</dt>
-      <dd>2014.05.11</dd>
-      <dd><a href="" target="_blank">博麗神社例大祭11</a>にサークル参加します。</dd>
+      <?php
+        $headerInfoArgs = array(
+          'posts_per_page' => 3,
+          'post_type' => 'event'
+        ); ?>
+      <?php $myposts = get_posts($headerInfoArgs); ?>
+      <?php foreach($myposts as $post) : setup_postdata($post); ?>
+      <dd><?php the_content(); ?></dd>
+      <?php endforeach; ?>
     </dl>
   </div>
 </header>
