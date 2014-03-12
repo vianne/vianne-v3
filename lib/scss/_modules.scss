@@ -250,6 +250,25 @@
     #{&}-year{}
   }
 }
+.list-thumb-s{
+  @extend .list-thumb;
+  margin-left: -44px;
+  li{
+    margin-bottom: 44px;
+    margin-left: 44px;
+    width: 202px;
+  }
+  a{
+    height: 122px;
+  }
+  img{
+    width: 202px;
+    height: auto;
+  }
+  .list-thumb-caption{
+    height: 122px;
+  }
+}
 
 .blk-works{
   @at-root{
