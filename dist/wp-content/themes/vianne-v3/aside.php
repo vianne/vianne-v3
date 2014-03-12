@@ -3,5 +3,5 @@
     <ul>
       <?php dynamic_sidebar( 'side-widget' ); ?>
     </ul>
-  </div><!-- /blk-blogaside -->
+  </div><!-- /blk-blogaside[] -->
 </aside>

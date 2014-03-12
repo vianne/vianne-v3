@@ -1,3 +1,5 @@
+<?php get_header("home"); ?>
+
 <h1 class="b-logo-home"><img src="assets/img/logo.png" alt=""></h1>
 
 <ul class="nav-main">
@@ -23,3 +25,5 @@
     <dd><a href="" target="_blank">博麗神社例大祭11</a></dd>
   </dl>
 </section>
+
+<?php get_footer(); ?>
