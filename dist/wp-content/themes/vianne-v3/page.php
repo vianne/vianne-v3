@@ -4,6 +4,7 @@
   <?php while (have_posts()) : the_post(); ?>
 
   <?php if(has_post_thumbnail()) { echo the_post_thumbnail(); } ?>
+    <h1 class="ttl-lv01"><?php the_title(); ?></h1>
   <?php the_content(); ?>
 
   <?php endwhile; ?>

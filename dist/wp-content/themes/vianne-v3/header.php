@@ -47,4 +47,3 @@
 
 <div class="l-main">
   <div class="l-inner">
-    <h1 class="ttl-lv01"><?php the_title(); ?></h1>
