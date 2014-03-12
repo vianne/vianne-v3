@@ -29,8 +29,14 @@
 
 <header class="l-header">
   <div class="l-inner cf">
-    <p class="b-logo"><a href="../"><img src="../assets/img/logo.png" alt=""></a></p>
-    <?php wp_nav_menu( array('menu_id' => 'nav' )); ?>
+    <p class="b-logo"><a href="/"><img src="/assets/img/logo.png" alt=""></a></p>
+    <ul class="nav-main">
+      <li><a href="/about/">About</a></li>
+      <li><a href="/gallery/">Gallery</a></li>
+      <li><a href="/works/">Works</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
     <dl class="blk-headerinfo">
       <dt>Event</dt>
       <dd>2014.05.11</dd>
@@ -41,4 +47,4 @@
 
 <div class="l-main">
   <div class="l-inner">
-    <h1 class="ttl-lv01">Works</h1>]
+    <h1 class="ttl-lv01"><?php the_title(); ?></h1>
