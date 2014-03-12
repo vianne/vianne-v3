@@ -1,0 +1,30 @@
+@function font-family($type, $important: false){
+  $fontFamily: sans-serif;
+  @if $important == 'important' or $important == true {
+    $important: ' !important';
+  } @else {
+    $important: '';
+  }
+  @if $type == sans-serif {
+    $fontFamily: sans-serif#{$important};
+  } @else if $type == serif {
+    $fontFamily: serif#{$important};
+  } @else if $type == monospace {
+    $fontFamily: monospace#{$important};
+  } @else if $type == arial {
+    $fontFamily: Arial, Helvetica, sans-serif#{$important};
+  } @else if $type == verdana {
+    $fontFamily: Verdana, Arial, Helvetica, sans-serif#{$important};
+  } @else if $type == tahoma {
+    $fontFamily: Tahoma, Arial, Helvetica, sans-serif#{$important};
+  } @else if $type == meiryo {
+    $fontFamily: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif#{$important};
+  } @else if $type == mspgothic {
+    $fontFamily: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif#{$important};
+  } @else if $type == msgothic {
+    $fontFamily: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ ゴシック", "MS Gothic", sans-serif#{$important};
+  } @else if $type == hiragino {
+    $fontFamily: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif#{$important};
+  }
+  @return $fontFamily;
+}

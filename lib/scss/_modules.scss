@@ -1,0 +1,76 @@
+// # Titles
+.ttl-main{
+  margin-bottom: 1em;
+}
+
+// # Image
+.mainimg{
+  margin-bottom: 30px;
+}
+
+// # Navs
+.nav-footer{
+  overflow: hidden;
+  margin-top: 9px;
+  margin-left: 120px;
+  line-height: 1;
+  a{
+    color: #fff;
+  }
+}
+
+.topicpath{
+  padding: 0;
+  font-size: $fz11;
+  li{
+    display: inline;
+  }
+  a{
+    &::after{
+      content: ">";
+      margin: 0 .5em;
+      font-family: font-family(arial);
+    }
+  }
+}
+
+.nav-arw{
+  background: url("../img/icon-arw.png") 0 center no-repeat;
+  padding-left: 15px;
+}
+.nav-flat{
+  padding: 0;
+  letter-spacing: -.4em;
+  li{
+    display: inline-block;
+    border-left: 1px solid #666;
+    margin-left: .5em;
+    padding-left: .5em;
+    letter-spacing: normal;
+    line-height: 1.1;
+    &:last-child{
+      border-right: 1px solid #666;
+      padding-right: .5em;
+    }
+  }
+}
+
+// # header
+.h{
+  @at-root{
+  }
+}
+
+// # aside
+.a{
+  @at-root{
+  }
+}
+
+// # footer
+.f{
+  @at-root{
+  }
+}
+
+// # Boxes

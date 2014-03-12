@@ -1,0 +1,147 @@
+// # Hacks (clearfix, FIR)
+.cf:after,
+.cf:before {
+  content: '';
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.cf {
+  zoom: 1;
+}
+
+.ht{
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  li{
+    list-style: none;
+  }
+  a{
+    display: block;
+    overflow: hidden;
+  }
+  br{
+    display: none;
+  }
+}
+ul.ht,
+ol.ht{
+  padding: 0;
+}
+
+// # Text
+.text{
+  @at-root{
+    #{&}-attention{
+      color: $attentionColor;
+    }
+    #{&}-weak{
+      font-size: $fz11;
+      color: $weakColor;
+    }
+    #{&}-topic{
+      text-align: center;
+    }
+    #{&}-posted,
+    #{&}-sup{
+      text-align: right;
+    }
+  }
+}
+
+// # Image
+.image{
+  margin: 2em 0;
+  text-align: center;
+}
+.banners{
+  padding: 0;
+  list-style: none;
+  a:hover{
+    img{
+      $i: $banHoverOpacity * 100;
+      filter: alpha(opacity=#{$i});
+      -khtml-opacity: $banHoverOpacity;
+      -moz-opacity: $banHoverOpacity;
+      opacity: $banHoverOpacity;
+    }
+  }
+}
+
+// # navigations
+.nav-flat{
+  li{
+    @include inline-block;
+    margin-left: .5em;
+    border-left: 1px solid #ccc;
+    padding-left: .5em;
+    line-height: 1;
+    @if $use-ie <= 7{
+      *line-height: 1.1;
+    }
+  }
+}
+
+// # table
+.table{
+  @at-root{
+    #{&}-outline{
+      border-top: 1px $tableBorderStyle $tableBorderColor;
+      border-right: 1px $tableBorderStyle $tableBorderColor;
+      thead{
+        th,
+        td{
+          text-align: center;
+        }
+      }
+      th,
+      td{
+        border-bottom: 1px $tableBorderStyle $tableBorderColor;
+        border-left: 1px $tableBorderStyle $tableBorderColor;
+      }
+      th{
+        background-color: $tableThColor;
+      }
+    }
+  }
+}
+
+// # box
+.section{
+  margin-bottom: 2em;
+  @at-root{
+    #{&}-wrap{
+      background-color: #fff;
+      padding: 28px 25px;
+    }
+  }
+}
+
+.flexbox-l-img{
+  overflow: hidden;
+  .image{
+    @include float(left);
+    margin: 0 $flexBoxMarginH $flexBoxMarginV 0;
+  }
+  .cont{
+    overflow: hidden;
+  }
+}
+.flexbox-r-img{
+  overflow: hidden;
+  .image{
+    @include float(right);
+    margin: 0 0 $flexBoxMarginV $flexBoxMarginH;
+  }
+  .cont{
+    overflow: hidden;
+  }
+}
+
+.box{
+  border: 1px solid $boxBorderColor;
+  background-color: $boxBgColor;
+  padding: $boxPadding;
+}

@@ -1,0 +1,30 @@
+// A button suitable for giving stars to someone.
+//
+// Markup:
+// <ul class="nav-flat">
+//   <li><a href="">itemA</a></li>
+//   <li><a href="">itemB</a></li>
+//   <li><a href="">itemC</a></li>
+// </ul>
+//
+// Styleguide 1.1.
+@charset "utf-8";
+// # Mixins & Functions
+@import "compass";
+@import "utils/_mixins.scss";
+@import "utils/_functions.scss";
+@import "utils/_fontsize.scss";
+
+// # Valiables
+@import "_settings.scss";
+
+// # Reset
+@import "resets/_normalize.scss";
+
+// # Base
+@import "bases/_base.scss";
+@import "bases/_base-modules.scss";
+
+// # Styles
+@import "_layout.scss";
+@import "_modules.scss";

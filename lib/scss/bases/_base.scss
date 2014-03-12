@@ -1,0 +1,91 @@
+html{
+  overflow-y: scroll;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-color: $bodyUnderColor;
+  font: #{$baseFontSize}/#{$baseLineHeight} $baseFontFamily;
+  color: $baseFontColor;
+}
+
+// # inlines
+a{
+  color: $linkColor;
+  text-decoration: $linkStyle;
+  &:link,
+  &:visited{
+    color: $linkColor;
+    text-decoration: $linkStyle;
+  }
+  &:hover,
+  &:active{
+    color: $linkHoverColor;
+    text-decoration: $linkHoverStyle;
+  }
+}
+
+strong,
+em,
+address{
+  font-style: normal;
+}
+strong,
+em{
+  font-weight: bold;
+}
+strong{}
+em{}
+small{}
+sup{}
+abbr{}
+address{}
+blockquote{}
+
+// # embed
+img,
+iframe,
+video{
+  border: none;
+  vertical-align: top;
+}
+img{}
+iframe{}
+video{}
+
+// # block
+h1,h2,h3,h4,h5{
+  margin: 0;
+}
+p{
+  margin: 0;
+}
+
+ul,
+ol,
+dl{
+  margin-top: 0;
+}
+ul{}
+ol{}
+dl{}
+dt{}
+dd{
+  margin-left: 0;
+}
+
+table{}
+caption{}
+tr{}
+th{}
+td{}
+
+form{}
+input{}
+textarea{}
+
+// # decorations
+::selection,
+::-moz-selection {
+  background: $selectionColor;
+}

@@ -1,0 +1,29 @@
+@mixin first-child($p, $v){
+  @if $use-ie <= 7{
+    #{$p}: expression((this.parentNode.firstChild ==this)?'none':'#{$v}');
+  }
+  &:first-child{
+    #{$p}: #{$v};
+  }
+}
+@mixin last-child($p, $v){
+  @if $use-ie <= 7{
+    #{$p}: expression((this.parentNode.lastChild ==this)?'none':'#{$v}');
+  }
+  &:last-child{
+    #{$p}: #{$v};
+  }
+}
+@mixin inline-block{
+  @if $use-ie <= 7{
+    *display: inline;
+    *zoom: 1;
+  }
+  display: inline-block;
+}
+@mixin float($lr){
+  float: $lr;
+  @if $use-ie <= 6{
+    _display: inline;
+  }
+}

@@ -1,0 +1,92 @@
+// # 汎用レイアウトスタイル
+// # Grids
+.l-row{
+  margin-left: -10px;
+  letter-spacing: -.4em;
+}
+
+%l-cols{
+  @include box-sizing(border-box);
+  display: inline-block;
+  //margin-right: 5px;
+  margin-left: 10px;
+  letter-spacing: normal;
+  vertical-align: top;
+}
+.l-col{
+  @at-root{
+    @for $i from 1 through 24{
+      #{&}-#{$i}{
+        @extend %l-cols;
+        width: (30px * $i) + (10px * ($i - 1));
+      }
+    }
+  }
+}
+
+// # Offset
+.l-offset{
+  @at-root{
+    @for $i from 1 through 23{
+      #{&}-#{$i}{
+        margin-left: (30px * $i) + (10px * $i) + 5px;
+      }
+    }
+  }
+}
+
+.l-horizontal{
+  > *{
+    float: left;
+  }
+}
+.l-inline{
+  letter-spacing: -.4em;
+  > *{
+    display: inline-block;
+    letter-spacing: normal;
+  }
+}
+
+.l-flex-cont{
+  overflow: hidden;
+}
+
+.l-f-l{
+  float: left;
+  margin: 0 1em 1em 0;
+}
+.l-f-r{
+  float: right;
+  margin: 0 0 1em 1em;
+}
+.l-centering{
+  margin: 0 auto;
+}
+
+// # 固定レイアウト
+.l-inner{
+  @extend .l-centering;
+  position: relative;
+  width: 960px;
+  .l-footer &{
+    height: 66px;
+  }
+}
+
+.l-header{
+}
+
+.l-main{
+}
+
+.l-content{
+}
+
+.l-aside{
+}
+
+.l-footer{
+  clear: both;
+}
+

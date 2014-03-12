@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+
+<title>{{#if title}}{{title}}｜{{/if}}{{#if kategori}}{{first kategori}}｜{{/if}}{{siteinfo.title}}</title>
+<meta name="description" content="{{siteinfo.description}}">
+<link rel="canonical" href="{{siteinfo.url}}{{path}}">
+
+<meta property="og:title" content="{{#if title}}{{title}}{{else}}{{siteinfo.title}}{{/if}}">
+<meta property="og:url" content="{{siteinfo.url}}{{path}}">
+<meta property="og:site_name" content="{{siteinfo.title}}">
+<meta property="og:image" content="{{siteinfo.url}}assets/img/p-ogp.jpg">
+<meta property="og:description" content="{{siteinfo.description}}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+
+<link rel="stylesheet" href="{{assets}}/css/site.css">
+<script type="text/javascript" charset="utf-8" src="{{assets}}/js/common.min.js"></script>
