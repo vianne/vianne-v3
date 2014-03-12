@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<!-- taxonomy.php -->
+<!-- date.php -->
 
 <div class="l-content">
   <h1 class="ttl-lv01">Blog</h1>
@@ -8,7 +8,7 @@
   <?php while (have_posts()) : the_post(); ?>
   <div class="entry l-section">
     <header class="entry-header">
-      <span class="entry-date"><?php the_time("Y.m.j") ?></span><span class="entry-cat"><?php echo get_the_term_list( $post->ID, 'blogcategory' ); ?></span>
+      <span class="entry-date"><?php the_time("Y.m.j") ?></span><span class="entry-cat"><?php the_category(); ?></span>
       <h2 class="entry-ttl"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
     </header>
     <section class="entry-body">
