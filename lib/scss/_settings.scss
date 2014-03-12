@@ -4,25 +4,27 @@ $use-ios:           false; // boolean
 $use-android:       false; // boolean
 
 // # colors
-$attentionColor:    #f00;
+$keyColor:          #fdf972;
+
+$attentionColor:    $keyColor;
 $weakColor:         #999;
 $noteColor:         #00f;
-$selectionColor:    #ff0;
+$selectionColor:    $keyColor;
 
-$linkColor:         #0e4dab;
-$linkHoverColor:    lighten($linkColor, 20);
-$linkStyle:         none;
-$linkHoverStyle:    underline;
+$linkColor:         #808080;
+$linkHoverColor:    $linkColor;
+$linkStyle:         underline;
+$linkHoverStyle:    none;
 
 // # body
-$bodyUnderColor:    #354053;
-$bodyTopColor:      #fffefc;
+$bodyUnderColor:    #fff;
+$bodyTopColor:      #fff;
 
 // # font & lineheight
 $baseFontFamily:    font-family(meiryo);
-$baseFontSize:      13px;
-$baseLineHeight:    19px;
-$baseFontColor:     #333;
+$baseFontSize:      14px;
+$baseLineHeight:    26px;
+$baseFontColor:     #808080;
 
 // # table
 $tableBorderColor:  #999;
@@ -48,3 +50,9 @@ $boxPadding:        1em .5em;
 //@import "common/*.png";
 
 //@include all-common-sprites;
+
+
+@font-face {
+  font-family: "IPA Pゴシック";
+  src: url("../font/ipagp.ttf");
+}

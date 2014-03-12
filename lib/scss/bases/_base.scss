@@ -5,7 +5,9 @@ body{
   margin: 0;
   padding: 0;
   background-color: $bodyUnderColor;
-  font: #{$baseFontSize}/#{$baseLineHeight} $baseFontFamily;
+  font-size: #{$baseFontSize};
+  line-height: #{$baseLineHeight};
+  font-family: "Courier New", "IPA Pゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, sans-serif;
   color: $baseFontColor;
 }
 
@@ -65,6 +67,11 @@ ul,
 ol,
 dl{
   margin-top: 0;
+}
+ul,
+ol{
+  padding-left: 0;
+  list-style: none;
 }
 ul{}
 ol{}

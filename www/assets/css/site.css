@@ -1,4 +1,8 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "IPA Pゴシック";
+  src: url("../font/ipagp.ttf");
+}
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -400,22 +404,24 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #354053;
-  font: 13px/19px "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  color: #333333;
+  background-color: white;
+  font-size: 14px;
+  line-height: 26px;
+  font-family: "Courier New", "IPA Pゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, sans-serif;
+  color: grey;
 }
 
 a {
-  color: #0e4dab;
-  text-decoration: none;
+  color: grey;
+  text-decoration: underline;
 }
 a:link, a:visited {
-  color: #0e4dab;
-  text-decoration: none;
+  color: grey;
+  text-decoration: underline;
 }
 a:hover, a:active {
-  color: #317dee;
-  text-decoration: underline;
+  color: grey;
+  text-decoration: none;
 }
 
 strong,
@@ -450,13 +456,19 @@ dl {
   margin-top: 0;
 }
 
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+}
+
 dd {
   margin-left: 0;
 }
 
 ::selection,
 ::-moz-selection {
-  background: yellow;
+  background: #fdf972;
 }
 
 .cf:after,
@@ -495,7 +507,7 @@ ol.ht {
 }
 
 .text-attention {
-  color: red;
+  color: #fdf972;
 }
 .text-weak {
   font-size: 85%;
@@ -797,6 +809,17 @@ ol.ht {
 
 .mainimg {
   margin-bottom: 30px;
+}
+
+.nav-main li {
+  display: inline-block;
+}
+.nav-main li::before {
+  content: "/";
+  margin: 0 5px;
+}
+.nav-main li:first-child::before {
+  display: none;
 }
 
 .nav-footer {

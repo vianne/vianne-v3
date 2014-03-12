@@ -9,6 +9,20 @@
 }
 
 // # Navs
+.nav-main{
+  li{
+    display: inline-block;
+    &::before{
+      content: "/";
+      margin: 0 5px;
+    }
+    &:first-child{
+      &::before{
+        display: none;
+      }
+    }
+  }
+}
 .nav-footer{
   overflow: hidden;
   margin-top: 9px;
