@@ -34,7 +34,8 @@ address{
 }
 strong,
 em{
-  font-weight: bold;
+  font-weight: normal;
+  background-color: $attentionColor;
 }
 strong{}
 em{}

@@ -1,37 +1,45 @@
 // # 汎用レイアウトスタイル
 // # Grids
-.l-row{
-  margin-left: -10px;
-  letter-spacing: -.4em;
-}
+// .l-row{
+//   margin-left: -10px;
+//   letter-spacing: -.4em;
+// }
 
-%l-cols{
-  @include box-sizing(border-box);
-  display: inline-block;
-  //margin-right: 5px;
-  margin-left: 10px;
-  letter-spacing: normal;
-  vertical-align: top;
-}
-.l-col{
-  @at-root{
-    @for $i from 1 through 24{
-      #{&}-#{$i}{
-        @extend %l-cols;
-        width: (30px * $i) + (10px * ($i - 1));
-      }
-    }
-  }
-}
+// %l-cols{
+//   @include box-sizing(border-box);
+//   display: inline-block;
+//   //margin-right: 5px;
+//   margin-left: 10px;
+//   letter-spacing: normal;
+//   vertical-align: top;
+// }
+// .l-col{
+//   @at-root{
+//     @for $i from 1 through 24{
+//       #{&}-#{$i}{
+//         @extend %l-cols;
+//         width: (30px * $i) + (10px * ($i - 1));
+//       }
+//     }
+//   }
+// }
 
-// # Offset
-.l-offset{
-  @at-root{
-    @for $i from 1 through 23{
-      #{&}-#{$i}{
-        margin-left: (30px * $i) + (10px * $i) + 5px;
-      }
-    }
+// // # Offset
+// .l-offset{
+//   @at-root{
+//     @for $i from 1 through 23{
+//       #{&}-#{$i}{
+//         margin-left: (30px * $i) + (10px * $i) + 5px;
+//       }
+//     }
+//   }
+// }
+
+.l-lineup{
+  margin-left: -50px;
+  > *{
+    float: left;
+    margin-left: 50px;
   }
 }
 
@@ -119,9 +127,14 @@ body,
 }
 
 .l-content{
+  float: left;
+  width: 620px;
 }
 
 .l-aside{
+  float: right;
+  padding-top: 100px;
+  width: 220px;
 }
 
 .l-footer{
