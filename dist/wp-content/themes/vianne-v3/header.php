@@ -21,7 +21,7 @@
 <meta property="og:locale" content="ja_JP">
 
 <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
-<script type="text/javascript" charset="utf-8" src="../assets/js/common.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/assets/js/common.min.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
