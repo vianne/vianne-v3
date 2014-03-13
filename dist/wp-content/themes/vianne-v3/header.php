@@ -12,13 +12,40 @@
 <link rel="canonical" href="http://www.xxxxx.com/">
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSSフィード" href="<?php bloginfo('rss2_url'); ?>">
 
-<meta property="og:title" content="Works">
-<meta property="og:url" content="http://www.xxxxx.com/">
-<meta property="og:site_name" content="サイトの名前">
-<meta property="og:image" content="http://www.xxxxx.com/assets/img/p-ogp.jpg">
-<meta property="og:description" content="ディスクリプション">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="ja_JP">
+<!-- ここからOGP -->
+<meta property="og:type" content="blog">
+<?php
+if (is_single()){//単一記事ページの場合
+     if(have_posts()): while(have_posts()): the_post();
+          echo '<meta property="og:description" content="'.mb_substr(get_the_excerpt(), 0, 100).'">';echo "\n";//抜粋を表示
+     endwhile; endif;
+     echo '<meta property="og:title" content="'; the_title(); echo '">';echo "\n";//単一記事タイトルを表示
+     echo '<meta property="og:url" content="'; the_permalink(); echo '">';echo "\n";//単一記事URLを表示
+} else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
+     echo '<meta property="og:description" content="'; bloginfo('description'); echo '">';echo "\n";//「一般設定」管理画面で指定したブログの説明文を表示
+     echo '<meta property="og:title" content="'; bloginfo('name'); echo '">';echo "\n";//「一般設定」管理画面で指定したブログのタイトルを表示
+     echo '<meta property="og:url" content="'; bloginfo('url'); echo '">';echo "\n";//「一般設定」管理画面で指定したブログのURLを表示
+}
+?>
+<meta property="og:site_name" content="<?php bloginfo('name'); ?>">
+<?php
+$str = $post->post_content;
+$searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';//投稿にイメージがあるか調べる
+if (is_single()){//単一記事ページの場合
+if (has_post_thumbnail()){//投稿にサムネイルがある場合の処理
+     $image_id = get_post_thumbnail_id();
+     $image = wp_get_attachment_image_src( $image_id, 'full');
+     echo '<meta property="og:image" content="'.$image[0].'">';echo "\n";
+} else if ( preg_match( $searchPattern, $str, $imgurl ) && !is_archive()) {//投稿にサムネイルは無いが画像がある場合の処理
+     echo '<meta property="og:image" content="'.$imgurl[2].'">';echo "\n";
+} else {//投稿にサムネイルも画像も無い場合の処理
+     echo '<meta property="og:image" content="http://vianne.nu/assets/img/p-ogp.png">';echo "\n";
+}
+} else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
+     echo '<meta property="og:image" content="http://vianne.nu/assets/img/p-ogp.png">';echo "\n";
+}
+?>
+<!-- ここまでOGP -->
 
 <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <script type="text/javascript" charset="utf-8" src="/assets/js/common.min.js"></script>
