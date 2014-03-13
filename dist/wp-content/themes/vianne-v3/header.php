@@ -9,7 +9,23 @@
 
 <title><?php bloginfo('name'); ?> <?php if ( is_single() ) { ?> &raquo; Blog Archive <?php } ?> <?php wp_title(); ?></title>
 <meta name="description" content="ディスクリプション">
-<link rel="canonical" href="http://www.xxxxx.com/">
+<?php if ( is_home() ) {
+    $canonical_url=get_bloginfo('url')."/";
+}
+else if (is_category())
+{
+    $canonical_url=get_category_link(get_query_var('cat'));
+}
+else if (is_page()||is_single())
+{
+    $canonical_url=get_permalink();
+}
+if ( $paged >= 2 || $page >= 2)
+{
+$canonical_url=$canonical_url.'page/'.max( $paged, $page ).'/';
+}
+?>
+<link rel="canonical" href="<?php echo $canonical_url; ?>">
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSSフィード" href="<?php bloginfo('rss2_url'); ?>">
 
 <!-- ここからOGP -->

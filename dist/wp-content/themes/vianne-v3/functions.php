@@ -46,5 +46,7 @@ function preprocess_comment_author( $commentdata ) {
 }
 add_filter('preprocess_comment', 'preprocess_comment_author', 2, 1);
 
+// Canonical設定用
+remove_action('wp_head', 'rel_canonical');
 
 ?>
