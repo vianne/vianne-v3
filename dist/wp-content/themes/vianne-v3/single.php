@@ -15,30 +15,7 @@
     <?php the_content(); ?>
   </section>
   <footer class="entry-footer">
-    <div class="entry-comment">
-      <h3 class="ttl-lv02 entry-comment-ttl">Comment</h3>
-      <!-- <dl>
-        <dt class="entry-comment-name"><a href="">お名前</a></dt>
-        <dd class="entry-comment-txt">コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント</dd>
-        <dt class="entry-comment-name"><a href="">お名前</a></dt>
-        <dd class="entry-comment-txt">コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント</dd>
-        <dt class="entry-comment-name"><a href="">お名前</a></dt>
-        <dd class="entry-comment-txt">コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント</dd>
-      </dl> -->
-    </div><!-- /entry-comment -->
-    <div class="entry-reaction">
-      <h3 class="ttl-lv02 entry-comment-ttl">Leave a Comment</h3>
-      <!-- <form action="">
-        <dl>
-          <dt>お名前</dt>
-          <dd><input type="text" name="" id=""></dd>
-          <dt>コメント</dt>
-          <dd><textarea name="" id="" cols="30" rows="10"></textarea></dd>
-        </dl>
-        <p><button type="submit" class="entry-reaction-submit">コメントを送信</button></p>
-      </form> -->
-      <?php comments_template( '', true ); ?>
-    </div>
+    <?php comments_template( '', true ); ?>
   </footer>
 </div>
   <?php endwhile; ?>

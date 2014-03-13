@@ -74,29 +74,43 @@
     </div>
   </section>
   <footer class="entry-footer">
-    <div class="entry-comment">
-      <h3 class="ttl-lv02 entry-comment-ttl">Comment</h3>
-      <dl>
-        <dt class="entry-comment-name"><a href="">お名前</a></dt>
-        <dd class="entry-comment-txt">コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント</dd>
-        <dt class="entry-comment-name"><a href="">お名前</a></dt>
-        <dd class="entry-comment-txt">コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント</dd>
-        <dt class="entry-comment-name"><a href="">お名前</a></dt>
-        <dd class="entry-comment-txt">コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント</dd>
-      </dl>
-    </div><!-- /entry-comment -->
-    <div class="entry-reaction">
-      <h3 class="ttl-lv02 entry-comment-ttl">Leave a Comment</h3>
-      <form action="">
-        <dl>
-          <dt>お名前</dt>
-          <dd><input type="text" name="" id=""></dd>
-          <dt>コメント</dt>
-          <dd><textarea name="" id="" cols="30" rows="10"></textarea></dd>
-        </dl>
-        <p><button type="submit" class="entry-reaction-submit">コメントを送信</button></p>
-      </form>
-    </div>
+    <div id="comments" class="comments-area">
+      <h2 class="comments-title">Comments</h2>
+      <ol class="comment-list">
+        <li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-3">
+          <div id="div-comment-3" class="comment-body">
+            <div class="comment-author vcard">
+              <div class="comment-meta commentmetadata">
+                <a href="http://vianne-v3.localhost/2014/03/%e6%97%a5%e8%a8%98%e3%83%86%e3%82%b9%e3%83%88/#comment-3">2014.03.13 8:42 AM</a>
+                &nbsp;&nbsp;<a class="comment-edit-link" href="http://vianne-v3.localhost/wp-admin/comment.php?action=editcomment&amp;c=3">(編集)</a>
+              </div>
+              <p>テスト</p>
+              <div class="reply">
+                <a class="comment-reply-link" href="/2014/03/%e6%97%a5%e8%a8%98%e3%83%86%e3%82%b9%e3%83%88/?replytocom=3#respond" onclick="return addComment.moveForm(&quot;div-comment-3&quot;, &quot;3&quot;, &quot;respond&quot;, &quot;72&quot;)">返信</a>
+              </div>
+            </div>
+          </li><!-- #comment-## -->
+        </ol><!-- .comment-list -->
+        <div id="respond" class="comment-respond">
+          <h3 id="reply-title" class="comment-reply-title">
+            コメントを残す
+            <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2014/03/%e6%97%a5%e8%a8%98%e3%83%86%e3%82%b9%e3%83%88/#respond" style="display:none;">コメントをキャンセル</a></small>
+          </h3>
+          <form action="http://vianne-v3.localhost/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+            <p class="comment-notes">メールアドレスが公開されることはありません。 <span class="required">*</span> が付いている欄は必須項目です</p>
+            <p class="comment-form-author"><label for="author">名前 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true"></p>
+            <p class="comment-form-email"><label for="email">メールアドレス <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" aria-required="true"></p>
+            <p class="comment-form-url"><label for="url">ウェブサイト</label> <input id="url" name="url" type="text" value="" size="30"></p>
+            <p class="comment-form-comment"><label for="comment">コメント</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>
+            <p class="form-allowed-tags">次の<abbr title="HyperText Markup Language">HTML</abbr> タグと属性が使えます:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>
+            <p class="form-submit">
+              <input name="submit" type="submit" id="submit" value="コメントを送信">
+              <input type="hidden" name="comment_post_ID" value="72" id="comment_post_ID">
+              <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+            </p>
+          </form>
+        </div><!-- #respond -->
+      </div>
   </footer>
 </div>
     </div><!-- /l-content -->

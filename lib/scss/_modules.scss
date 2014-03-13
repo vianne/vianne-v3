@@ -14,7 +14,9 @@
     width: 20px;
   }
 }
-.ttl-lv02{
+.ttl-lv02,
+.comments-title,
+.comment-reply-title{
   font-size: $fz16;
   font-style: italic;
   font-weight: bold;
@@ -444,4 +446,50 @@
       }
     }
   }
+}
+
+.comment-list,
+.comment-form{
+  margin: 50px 0;
+}
+.comment-form{
+  > p{
+    margin-bottom: 1em;
+  }
+  label{
+    display: inline-block;
+    width: 120px;
+  }
+  #author,
+  #email,
+  #url,
+  #comment{
+    padding: 4px;
+  }
+  #submit{
+    border: none;
+    background-color: $keyColor;
+    font-weight: bold;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .form-allowed-tags{
+    display: none;
+  }
+}
+.comment-list{
+  li{
+    margin-bottom: 2em;
+    .reply{
+      font-size: $fz12;
+    }
+  }
+}
+.comment-author,
+.comment-meta{
+  display: inline-block;
+}
+.comment-meta{
+  font-size: $fz12;
 }
