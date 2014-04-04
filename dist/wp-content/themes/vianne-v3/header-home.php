@@ -8,18 +8,18 @@
 <meta charset="utf-8">
 
 <title><?php bloginfo('name'); ?></title>
-<?php if ( is_single() ) { // 単独記事ページの場合 ?>
-    <?php if ($post->post_excerpt){ ?>
-<meta name="description" content="<? echo $post->post_excerpt; ?>">
-    <?php } else {
+<?php
+if ( is_single() ) { // 単独記事ページの場合
+    if ($post->post_excerpt){
+        echo '<meta name="description" content="' .$post->post_excerpt. '">';
+    } else {
         $summary = strip_tags($post->post_content);
         $summary = str_replace("n", "", $summary);
-        $summary = mb_substr($summary, 0, 80). "…"; ?>
-<meta name="description" content="<?php echo $summary; ?>">
-    <?php } ?>
-<?php } else { // 単独記事ページ以外の場合 ?>
-<meta name="description" content="<?php bloginfo('description'); ?>">
-<? } ?>
+        $summary = mb_substr($summary, 0, 80). "…";
+        echo '<meta name="description" content="'.bloginfo('description').'">';
+    }
+}
+?>
 
 <?php if ( is_home() ) {
     $canonical_url=get_bloginfo('url')."/";
