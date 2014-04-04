@@ -151,8 +151,25 @@
   dt,
   dd,
   li{
-    display: inline-block;
     font-size: $fz12;
+  }
+  dt,
+  dd{
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 50%;
+  }
+  dt{
+    padding-right: .3em;
+    text-align: right;
+  }
+  dd{
+    padding-left: .3em;
+    text-align: left;
+  }
+  li{
+    display: inline-block;
   }
 }
 
