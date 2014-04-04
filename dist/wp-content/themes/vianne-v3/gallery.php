@@ -8,6 +8,10 @@ get_header(); ?>
 $args = array(
      'post_type' => 'gallery', /* 投稿タイプを指定 */
      'paged' => $paged,
+     'posts_per_page' => 100,
+     'meta_key' => 'number',
+     'order' => 'DESC',
+     'orderby' => 'meta_value_num'
 ); ?>
 <?php query_posts( $args ); ?>
 <ul class="list-thumb">
