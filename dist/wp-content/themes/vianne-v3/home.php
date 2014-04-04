@@ -12,22 +12,21 @@
 
 <section>
   <h2 class="ttl-lv02">Recent</h2>
-  <dl class="list-hometopics">
+  <dl class="list-hometopics cf">
     <!-- <dt>2014.03.12</dt>
     <dd><a href="">サイトをリニューアルしました。</a></dd> -->
     <?php
-    $args = array(
-      'posts_per_page' => 1,
-      'post_type' => 'blog'
-    ); ?>
-    <?php query_posts( $args ); ?>
-    <?php if (have_posts()) : ?>
-    <?php while (have_posts()) : the_post(); ?>
+      $args = array(
+        'posts_per_page' => 3
+      );
+      query_posts( $args );
+      if (have_posts()) : while (have_posts()) : the_post(); ?>
     <dt><?php the_time("Y.m.d") ?></dt>
     <dd><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></dd>
-    <?php endwhile; ?>
-    <?php else : ?>
-    <?php endif; ?>
+    <?php
+    endwhile;
+    endif;
+    ?>
   </dl>
 </section>
 
@@ -40,14 +39,16 @@
     $args = array(
       'posts_per_page' => 3,
       'post_type' => 'event'
-    ); ?>
-    <?php query_posts( $args ); ?>
-    <?php if (have_posts()) : ?>
-    <?php while (have_posts()) : the_post(); ?>
+    );
+    query_posts( $args );
+    if (have_posts()) :
+    while (have_posts()) : the_post();
+    ?>
     <li><?php the_content(); ?></li>
-    <?php endwhile; ?>
-    <?php else : ?>
-    <?php endif; ?>
+    <?php
+    endwhile;
+    endif;
+    ?>
   </ul>
 </section>
 
