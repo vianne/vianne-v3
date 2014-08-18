@@ -37,7 +37,7 @@
     <dd><a href="" target="_blank">博麗神社例大祭11</a></dd> -->
     <?php
     $args = array(
-      'posts_per_page' => 3,
+      'posts_per_page' => 1,
       'post_type' => 'event'
     );
     query_posts( $args );
