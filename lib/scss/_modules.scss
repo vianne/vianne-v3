@@ -102,7 +102,7 @@
 }
 
 .nav-arw{
-  background: url("../img/icon-arw.png") 0 center no-repeat;
+  background: url("img/icon-arw.png") 0 center no-repeat;
   padding-left: 15px;
 }
 .nav-flat{
@@ -514,11 +514,18 @@
 /* Share
 ================================= */
 .entry-share{
+  margin: 40px 0;
+  padding: 0;
+  list-style: none;
   div,
   a,
-  span{
+  span,
+  iframe{
     height: 20px;
-    vertical-align: top;
+    vertical-align: top !important;
+  }
+  li{
+    display: inline-block;
   }
 }
 

@@ -16,28 +16,16 @@
     <?php the_content(); ?>
   </section>
   <footer class="entry-footer">
+    <ul class="entry-share">
+      <li class="fb"><div class="fb-like" data-href="<?php the_permalink() ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div></li>
+      <li class="tw"><a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink() ?>">Tweet</a></li>
+      <li class="hb"><a href="http://b.hatena.ne.jp/entry/<?php the_permalink() ?>" class="hatena-bookmark-button" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a></li>
+    </ul>
     <div class="entry-comment">
       <h3 class="ttl-lv02 entry-comment-ttl">Comment</h3>
-      <!-- <dl>
-        <dt class="entry-comment-name"><a href="">お名前</a></dt>
-        <dd class="entry-comment-txt">コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント</dd>
-        <dt class="entry-comment-name"><a href="">お名前</a></dt>
-        <dd class="entry-comment-txt">コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント</dd>
-        <dt class="entry-comment-name"><a href="">お名前</a></dt>
-        <dd class="entry-comment-txt">コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント</dd>
-      </dl> -->
     </div><!-- /entry-comment -->
     <div class="entry-reaction">
       <h3 class="ttl-lv02 entry-comment-ttl">Leave a Comment</h3>
-      <!-- <form action="">
-        <dl>
-          <dt>お名前</dt>
-          <dd><input type="text" name="" id=""></dd>
-          <dt>コメント</dt>
-          <dd><textarea name="" id="" cols="30" rows="10"></textarea></dd>
-        </dl>
-        <p><button type="submit" class="entry-reaction-submit">コメントを送信</button></p>
-      </form> -->
       <?php comments_template( '', true ); ?>
     </div>
   </footer>
