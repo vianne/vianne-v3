@@ -41,42 +41,55 @@ $canonical_url=$canonical_url.'page/'.max( $paged, $page ).'/';
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSSフィード" href="<?php bloginfo('rss2_url'); ?>">
 
 <!-- ここからOGP -->
-<meta property="og:type" content="blog">
+<meta property="og:type" content="website">
 <?php
-if (is_single()){//単一記事ページの場合
-     if(have_posts()): while(have_posts()): the_post();
-          echo '<meta property="og:description" content="'.mb_substr(get_the_excerpt(), 0, 100).'">';echo "\n";//抜粋を表示
-     endwhile; endif;
-     echo '<meta property="og:title" content="'; the_title(); echo '">';echo "\n";//単一記事タイトルを表示
-     echo '<meta property="og:url" content="'; the_permalink(); echo '">';echo "\n";//単一記事URLを表示
-} else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
-     echo '<meta property="og:description" content="'; bloginfo('description'); echo '">';echo "\n";//「一般設定」管理画面で指定したブログの説明文を表示
-     echo '<meta property="og:title" content="'; bloginfo('name'); echo '">';echo "\n";//「一般設定」管理画面で指定したブログのタイトルを表示
-     echo '<meta property="og:url" content="'; bloginfo('url'); echo '">';echo "\n";//「一般設定」管理画面で指定したブログのURLを表示
+//単一記事ページの場合
+if (is_single()){
+  if(have_posts()): while(have_posts()): the_post();
+    echo '<meta property="og:description" content="'.mb_substr(get_the_excerpt(), 0, 100).'">'; //抜粋を表示
+    echo "\n";
+  endwhile;endif;
+  echo '<meta property="og:title" content="'; the_title(); echo '">'; //単一記事タイトルを表示
+  echo "\n";
+  echo '<meta property="og:url" content="'; the_permalink(); echo '">'; //単一記事URLを表示
+  echo "\n";
+} else {
+//単一記事ページページ以外の場合（アーカイブページやホームなど）
+  echo '<meta property="og:description" content="'; bloginfo('description'); echo '">';echo "\n";//「一般設定」管理画面で指定したブログの説明文を表示
+  echo '<meta property="og:title" content="'; bloginfo('name'); echo '">';echo "\n";//「一般設定」管理画面で指定したブログのタイトルを表示
+  echo '<meta property="og:url" content="'; bloginfo('url'); echo '">';echo "\n";//「一般設定」管理画面で指定したブログのURLを表示
 }
 ?>
 <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
 <?php
+$defaultImageUrl = get_stylesheet_directory_uri() . '/img/p-ogp.png';
 $str = $post->post_content;
 $searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';//投稿にイメージがあるか調べる
-if (is_single()){//単一記事ページの場合
-if (has_post_thumbnail()){//投稿にサムネイルがある場合の処理
+//単一記事ページの場合
+if (is_single()){
+  //投稿にサムネイルがある場合の処理
+  if (has_post_thumbnail()){
      $image_id = get_post_thumbnail_id();
      $image = wp_get_attachment_image_src( $image_id, 'full');
      echo '<meta property="og:image" content="'.$image[0].'">';echo "\n";
-} else if ( preg_match( $searchPattern, $str, $imgurl ) && !is_archive()) {//投稿にサムネイルは無いが画像がある場合の処理
+  } else if ( preg_match( $searchPattern, $str, $imgurl ) && !is_archive()) {
+  //投稿にサムネイルは無いが画像がある場合の処理
      echo '<meta property="og:image" content="'.$imgurl[2].'">';echo "\n";
-} else {//投稿にサムネイルも画像も無い場合の処理
-     echo '<meta property="og:image" content="http://vianne.nu/assets/img/p-ogp.png">';echo "\n";
-}
-} else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
-     echo '<meta property="og:image" content="http://vianne.nu/assets/img/p-ogp.png">';echo "\n";
+  } else {
+  //投稿にサムネイルも画像も無い場合の処理
+     echo '<meta property="og:image" content="' . $defaultImageUrl . '">';
+     echo "\n";
+  }
+} else {
+//単一記事ページページ以外の場合（アーカイブページやホームなど）
+   echo '<meta property="og:image" content="' . $defaultImageUrl . '">';
+   echo "\n";
 }
 ?>
 <!-- ここまでOGP -->
 
 <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
-<script type="text/javascript" charset="utf-8" src="/assets/js/common.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="<?php bloginfo('stylesheet_directory'); ?>/js/common.min.js"></script>
 </head>
 
 <body id="page-home" <?php body_class(); ?>>

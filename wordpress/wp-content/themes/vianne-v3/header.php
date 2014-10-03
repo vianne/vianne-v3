@@ -98,7 +98,7 @@ if (is_single()){
 <!-- ここまでOGP -->
 
 <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
-<script type="text/javascript" charset="utf-8" src="/assets/js/common.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="<?php bloginfo('stylesheet_directory'); ?>/js/common.min.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -106,7 +106,7 @@ if (is_single()){
 
 <header class="l-header">
   <div class="l-inner cf">
-    <p class="b-logo"><a href="/"><img src="/assets/img/logo.png" alt=""></a></p>
+    <p class="b-logo"><a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png" alt=""></a></p>
     <ul class="nav-main">
       <li><a href="/about/">About</a></li>
       <li><a href="/gallery/">Gallery</a></li>
