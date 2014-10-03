@@ -1,6 +1,6 @@
 <?php get_header("home"); ?>
 
-<h1 class="b-logo-home"><img src="assets/img/logo.png" alt=""></h1>
+<h1 class="b-logo-home"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png" alt=""></h1>
 
 <ul class="nav-main">
   <li><a href="/about/">About</a></li>
