@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 
   // JSファイル圧縮用のパス指定
   var jsPath = 'lib/js/';
+  var wpThemePath = 'wordpress/wp-content/themes/vianne-v3/';
 
   grunt.initConfig({
     compass: {                  // Task
@@ -9,6 +10,13 @@ module.exports = function(grunt) {
         options: {              // Target options
           config: 'config/config.rb',
           environment: 'development'
+        }
+      },
+      wordpress: {                    // Another target
+        options: {
+          sassDir: 'lib/scss/',
+          cssDir: wpThemePath + 'css/',
+          cacheDir: 'cache/'
         }
       }
     },
@@ -44,18 +52,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    kss: {
-      options: {
-        template: 'lib/kss-template',
-        includeType: 'css',
-        includePath: 'www/assets/css/site.css'
-      },
-      dist: {
-        files: {
-          'docs/': ['lib/scss/']
-        }
-      }
-    },
     connect: {
       uses_defaults: {} //空のサブタスクを入れます。名前は何でもいいです。ここではuses_defaultsにしました。
     },
@@ -72,10 +68,6 @@ module.exports = function(grunt) {
         files: ['lib/js/*.js'],
         tasks: 'uglify'
       },
-      kss: {
-        files: ['www/assets/css/*.css'],
-        tasks: ['kss']
-      },
       options: {
         livereload: true //livereloadを有効にします。
       }
@@ -83,7 +75,6 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('assemble');
-  grunt.loadNpmTasks('grunt-kss');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks('grunt-contrib-connect');
